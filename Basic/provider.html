@@ -1,0 +1,113 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Tuan Anh">
+    <meta name="generator" content="Version 1">
+    <title>Provider</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="provider.css" rel="stylesheet">
+	
+	<script language="javascript" src="provider.js"></script>
+  </head>
+  <body>
+    <div class="container-lg ">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="providerview text-bg-light">
+					<form>
+						<div class="row my-3">
+							<div class="col-md-12 text-center">
+								<div class="text-bg-primary py-3 providerview-title"><i class="fa-solid fa-user"></i> Provider Management</div>
+							</div> 
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="name" class="form-label">Provider name</label>
+							</div>
+							<div class="col-md-4">
+								<input type="text" class="form-control" id="name" aria-describedby="userHelp" onkeyup="checkValidProvider(this.form)">
+								<div id="userHelp" class="form-text">Bạn cần phải cung cấp tên nhà cung cấp chính xác</div>
+							</div>
+							<div class="col-md-4">
+								<div id="errorName"></div>
+							</div>
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="img" class="form-label">Provider image</label>
+							</div>
+							<div class="col-md-4">
+								<input type="file" class="form-control" id="img">
+							</div>
+						</div>
+						
+						<div class="row my-3 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="img" class="form-label">Provider notes</label>
+							</div>
+							<div class="col-md-9">
+								<div id="editor"></div>
+							</div>
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-4 text-end">
+								<input type="checkbox" class="form-check-input" id="check" onclick="checkValidProvider(this.form)">
+							</div>
+							<div class="col-8">
+								<label class="form-check-label" for="check">Do you agree with provider's rules?</label>
+							</div>						
+						</div>
+						
+						<div class="row my-3">
+							<div class="col-md-12 text-center">
+								<a href="#" class="link-primary"><i class="fa-solid fa-key"></i> Forget password</a>&nbsp&nbsp|&nbsp&nbsp
+								<a href="#" class="link-primary"><i class="fa-solid fa-question"></i> Help!</a>
+							</div>
+						
+						</div>
+
+						<div class="row my-3 align-items-center">
+							<div class="col-md-12 text-center">
+								<button type="button" class="btn btn-primary" disabled id="btnRegistry"><i class="fa-solid fa-right-to-bracket"></i> Registry</button>
+								<button type="button" class="btn btn-secondary">Exit <i class="fa-solid fa-right-from-bracket"></i></button>
+							</div>
+						</div>
+						
+						<div class="row my-3">
+							<div class="col-md-11 text-end">
+								<a href="#" class="link-primary"><i class="fa-solid fa-language"></i> Vietnamese</a>
+							</div>
+						
+						</div>
+					  
+					</form>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+	<script src="ckeditor.js"></script>
+
+	<script>
+		ClassicEditor
+			.create( document.querySelector( '#editor' ), {
+				// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+			} )
+			.then( editor => {
+				window.editor = editor;
+			} )
+			.catch( err => {
+				console.error( err.stack );
+			} );
+	</script>
+  </body>
+</html>

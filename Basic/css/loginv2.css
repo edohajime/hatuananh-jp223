@@ -1,0 +1,13 @@
+﻿/* Các xử lý định dạng cho loginv2.html - phiên bản bootstrap*/
+
+@import url('../start.css');
+
+.loginview{
+	height: 400px;
+}
+
+.loginview-title{
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: bold;
+}

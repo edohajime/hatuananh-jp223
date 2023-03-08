@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Tuan Anh">
+    <meta name="generator" content="Version 3">
+    <title>Login V3</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="css/loginv3.css" rel="stylesheet">
+	
+	<script language="javascript" src="loginv3.js"></script>
+  </head>
+  <body>
+    <div class="container-lg ">
+		<div class="row">
+			<div class="col-lg-6 offset-lg-3">
+				<div class="loginview text-bg-light">
+					<form>
+						<div class="row my-3">
+							<div class="col-md-12 text-center">
+								<div class="text-bg-primary py-3 loginview-title"><i class="fa-solid fa-user"></i> Login</div>
+							</div> 
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-md-4 text-end">
+								<label for="user" class="form-label">Username / Email</label>
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="user" aria-describedby="userHelp" onkeyup="checkValidUser(this.form)">
+								<div id="emailHelp" class="form-text">Bạn có thể nhập tên tài khoản hoặc hộp thư</div>
+								<div id="errorUser"></div>
+							</div>
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-md-4 text-end">
+								<label for="pass" class="form-label">Password</label>
+							</div>
+							<div class="col-md-6">
+								<input type="password" class="form-control" id="pass" onkeyup="checkValidUser(this.form)">
+								<div id="errorPass"></div>
+							</div>
+						</div>
+						<div class="row my-3 align-items-center">
+							<div class="col-4 text-end">
+								<input type="checkbox" class="form-check-input" id="check">
+							</div>
+							<div class="col-8">
+								<label class="form-check-label" for="check">Save information on this PC?</label>
+							</div>						
+						</div>
+						
+						<div class="row my-3">
+							<div class="col-md-12 text-center">
+								<a href="#" class="link-primary"><i class="fa-solid fa-key"></i> Forget password</a>&nbsp&nbsp|&nbsp&nbsp
+								<a href="#" class="link-primary"><i class="fa-solid fa-question"></i> Help!</a>
+							</div>
+						
+						</div>
+
+						<div class="row my-3 align-items-center">
+							<div class="col-md-12 text-center">
+								<button type="button" class="btn btn-primary" onclick="checkValidUser(this.form)"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+								<button type="button" class="btn btn-secondary" onclick="window.close()">Exit <i class="fa-solid fa-right-from-bracket"></i></button>
+							</div>
+						</div>
+						
+						<div class="row my-3">
+							<div class="col-md-11 text-end">
+								<a href="#" class="link-primary"><i class="fa-solid fa-language"></i> Vietnamese</a>
+							</div>
+						
+						</div>
+					  
+					</form>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+	
+  </body>
+</html>

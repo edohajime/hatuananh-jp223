@@ -1,0 +1,252 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Tuan Anh">
+    <meta name="generator" content="Version 1">
+    <title>User</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template -->
+    <link href="user.css" rel="stylesheet">
+	
+	<script language="javascript" src="user.js"></script>
+  </head>
+  <body>
+    <div class="container-lg ">
+		<div class="row">
+			<div class="col-lg-10 offset-lg-1">
+				<div class="userview text-bg-light">
+					<form id="frmUser">
+						<div class="row my-2">
+							<div class="col-md-12 text-center">
+								<div class="text-bg-primary py-3 userview-title"><i class="fa-solid fa-user"></i> Account Management</div>
+							</div> 
+						</div>
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="name" class="form-label">Username</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="name" aria-describedby="userHelp" onkeyup="checkUsername()">
+								<div id="userHelp" class="form-text">Chỉ xác định tên tài khoản vào hệ thống</div>
+							</div>
+							<div class="col-md-3">
+								<div id="errUsername" class="mb-4"></div>
+							</div>
+						</div>
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="pass" class="form-label">Password</label>
+							</div>
+							<div class="col-md-3">
+								<input type="password" class="form-control" id="pass" onkeyup="checkUserpass()">
+							</div>
+							
+							<div class="col-md-2 text-end">
+								<label for="pass2" class="form-label">Confirm Password</label>
+							</div>
+							<div class="col-md-3">
+								<input type="password" class="form-control" id="pass2" onkeyup="checkUserpass()">
+							</div>
+						</div>
+						
+						<div class="row">
+							<div class="col-md-8 offset-md-2">
+								<div id="errPass"></div>
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="email" class="form-label">Email</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="email" onkeyup="checkEmail()">
+							</div>
+							<div class="col-md-3">
+								<div id="errEmail"></div>
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="img" class="form-label">Permission</label>
+							</div>
+							<div class="col-md-3">
+								<script language="javascript">
+									generatePermis();
+								</script>
+							</div>
+						</div>
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="roles" class="form-label">Roles</label>
+							</div>
+							<div class="col-md-10">
+								<script language="javascript">
+									generateRoles();
+								</script>
+								
+								<div class="row my-2">
+									<div class="col-md-12">
+										<div id="errRoles"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="row my-2">
+							<div class="col-md-12 text-center">
+								<div class="text-bg-primary py-3 userview-title"><i class="fa-solid fa-user">
+								Detail Information</div>
+							</div> 
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="fullname" class="form-label">Fullname</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="fullname">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="alias" class="form-label">Alias</label>
+							</div>
+							<div class="col-md-3">
+								<input type="text" class="form-control" id="alias">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="gender" class="form-label">Gender</label>
+							</div>
+							<div class="col-md-3">
+								<select class="form-control" id="gender">
+									<option value="0">Male</option>
+									<option value="1">Female</option>
+									<option value="2">Male -> Female</option></option>
+									<option value="3">Female -> Male</option></option>
+									<option value="4">Male...</option>
+									<option value="5">Female...</option>
+									<option value="6" selected>...</option>
+								</select>
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="birth" class="form-label">Birthday</label>
+							</div>
+							<div class="col-md-3">
+								<input type="date" class="form-control" id="birth">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="address" class="form-label">Address</label>
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="address">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="phone" class="form-label">Phone</label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" class="form-control" id="phone">
+							</div>
+							<div class="col-md-1 text-end">
+								<label for="mobile" class="form-label">Mobile</label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" class="form-control" id="mobile">
+							</div>
+							<div class="col-md-1 text-end">
+								<label for="home" class="form-label">Home</label>
+							</div>
+							<div class="col-md-2">
+								<input type="text" class="form-control" id="home">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="address" class="form-label">User Notes</label>
+							</div>
+							<div class="col-md-9">
+								<div id="editor"></div>
+							</div>
+						</div>
+						
+						<div class="row my-2">
+							<div class="col-md-12 text-center">
+								<div class="text-bg-primary py-3 userview-title"><i class="fa-solid fa-user"></i> Detail Information</div>
+							</div> 
+						</div>
+			
+						<div class="row my-2 align-items-center">
+							<div class="col-md-2 text-end">
+								<label for="officeaddress" class="form-label">Office Address</label>
+							</div>
+							<div class="col-md-6">
+								<input type="text" class="form-control" id="address">
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-12 text-center">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.4736630784196!2d105.73291811424572!3d21.053735992302634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345457e292d5bf%3A0x20ac91c94d74439a!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2hp4buHcCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1659353611495!5m2!1svi!2s" 
+								width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							</div>
+						</div>
+						
+						<div class="row my-2 align-items-center">
+							<div class="col-md-12 text-center">
+								<button type="button" class="btn btn-primary" onclick="checkValidUser()"><i class="fa-solid fa-registered"></i> Registry</button>
+								<button type="button" class="btn btn-secondary"><i class="fa-solid fa-rectangle-xmark"></i> Cancel</button>
+							</div>
+						</div>
+						
+						<div class="row my-2">
+							<div class="col-md-11 text-end">
+								<a href="#" class="link-primary"><i class="fa-solid fa-language"></i> Vietnamese</a>
+							</div>
+						
+						</div>
+					  
+					</form>
+				
+				</div>
+			
+			</div>
+		
+		</div>
+		
+	</div>
+	<script src="ckeditor.js"></script>
+
+	<script>
+		ClassicEditor
+			.create( document.querySelector( '#editor' ), {
+				// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+			} )
+			.then( editor => {
+				window.editor = editor;
+			} )
+			.catch( err => {
+				console.error( err.stack );
+			} );
+	</script>
+  </body>
+</html>
